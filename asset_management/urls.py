@@ -5,6 +5,8 @@ from .views import (
     DeviceListCreateView, DeviceRetrieveUpdateDeleteView
 )
 
+
+# api endpoint for creating, updating, and deleting 
 urlpatterns = [
     path('companies/', CompanyListCreateView.as_view(), name='company-list-create'),
     path('companies/<int:pk>/', CompanyRetrieveUpdateDeleteView.as_view(), name='company-retrieve-update-delete'),

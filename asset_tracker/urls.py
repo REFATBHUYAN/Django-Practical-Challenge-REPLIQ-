@@ -20,6 +20,8 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
+
+# below code is added for creating automated api documentation
 schema_view = get_schema_view(
    openapi.Info(
       title="Corporate Assets Tracker API",
@@ -33,6 +35,7 @@ schema_view = get_schema_view(
    permission_classes=(permissions.AllowAny,),
 )
 
+# here also imported app urls file
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('asset_management.urls')),

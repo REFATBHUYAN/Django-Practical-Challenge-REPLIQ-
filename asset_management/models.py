@@ -1,12 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
+# Company database models
 class Company(models.Model):
     name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
 
+# Employee database models
 class Employee(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='employees')
@@ -14,6 +17,7 @@ class Employee(models.Model):
     def __str__(self):
         return self.user.username
 
+# Device database models
 class Device(models.Model):
     name = models.CharField(max_length=100)
     checkout_date = models.DateTimeField(null=True, blank=True)
